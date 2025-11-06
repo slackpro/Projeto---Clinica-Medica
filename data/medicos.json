@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Dra. Ana Souza",
+    "idade": 45,
+    "cpf": "548.456.789.-79",
+    "especialidade": "Cardiologista"
+  },
+  {
+    "nome": "Dr. Carlos Mendes",
+    "idade": 50,
+    "cpf": "556.486.789.-37",
+    "especialidade": "Ortopedia"
+  },
+  {
+    "nome": "Dra. Fernanda Lima",
+    "idade": 38,
+    "cpf": "654.456.231.-88",
+    "especialidade": "Pediatria"
+  },
+  {
+    "nome": "Dr. Marcos Andrade",
+    "idade": 32,
+    "cpf": "500.456.789.-45",
+    "especialidade": "Clinico Geral"
+  }
+]
