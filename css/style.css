@@ -82,3 +82,30 @@ button {
 button:hover {
   background: var(--color-green-hover);
 }
+
+.consulta-item {
+  background-color: var(--color-green-light);
+  border-radius: 5px;
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-cancelar {
+  margin-top: 10px;
+  margin-left: 10px;
+  color: var(--color-white);
+  background: var(--color-red);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-cancelar:hover {
+  background: var(--color-red-dark);
+}

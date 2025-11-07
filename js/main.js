@@ -37,6 +37,12 @@ async function carregarDados() {
   }
 }
 
+//Função para formatar a data: YYYY-MM-DD para DD/MM/YYYY
+function formataData(data) {
+  const [ano, mes, dia] = data.split('-'); //o split separa o que antes era um elemento (string), e transforma em elementos separados, passiveis de ser maniulados
+  return `${dia}/${mes}/${ano}`;
+}
+
 function agendarConsulta() {
   const pacienteSelecionado = document.getElementById('selectPaciente').value;
   const medicoSelecionado = document.getElementById('selecMeico').value;
@@ -51,9 +57,11 @@ function agendarConsulta() {
   const medico = medicos.find((m) => m.nome === medicoSelecionado);
 
   if (paciente && medico) {
-    medico.agendarConsulta(paciente, dataSelecionada).then((mensagem) => {
-      DomHandler.exibirConsulta(mensagem);
-    });
+    medico
+      .agendarConsulta(paciente, formataData(dataSelecionada))
+      .then((mensagem) => {
+        DomHandler.exibirConsulta(mensagem);
+      });
   }
 }
 
@@ -63,15 +71,3 @@ document.addEventListener('DOMContentLoaded', () => {
     .getElementById('btnAgendar')
     .addEventListener('click', agendarConsulta);
 });
-
-// const medico = new Medico(
-//   'Dr.Fernando Dias',
-//   40,
-//   '123.456.789-85',
-//   'Pediatria'
-// );
-// const paciente = new Paciente('Fabio Duarte', 10, '134.684.985.-87');
-
-// medico.agendarConsulta(paciente, '10/05/2025').then((mensagem) => {
-//   console.log(mensagem);
-// });

@@ -26,9 +26,9 @@ export class DomHandler {
 
     //verificar se já existe um elemento com a mesma mensagem/texto
     const consultas = Array.from(listaConsulta.getElementsByTagName('li'));
-    const consultaExiste = consultas.some((li) => {
-      li.textContent.includes(mensagem);
-    });
+    const consultaExiste = consultas.some((li) =>
+      li.textContent.includes(mensagem)
+    );
 
     if (consultaExiste) {
       alert('Essa consulta já foi agendada!');
@@ -54,5 +54,3 @@ export class DomHandler {
     listaConsulta.appendChild(li);
   }
 }
-
-//
