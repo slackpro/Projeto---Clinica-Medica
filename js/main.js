@@ -36,7 +36,33 @@ async function carregarDados() {
     console.error('Erro ao carregar os dados', error);
   }
 }
-carregarDados();
+
+function agendarConsulta() {
+  const pacienteSelecionado = document.getElementById('selectPaciente').value;
+  const medicoSelecionado = document.getElementById('selecMeico').value;
+  const dataSelecionada = document.getElementById('inputData').value;
+
+  if (!pacienteSelecionado || !medicoSelecionado || !dataSelecionada) {
+    alert('Por favor, selecione um paciente, um médico e uma data');
+  }
+
+  const paciente = pacientes.find((p) => p.nome === pacienteSelecionado);
+
+  const medico = medicos.find((m) => m.nome === medicoSelecionado);
+
+  if (paciente && medico) {
+    medico.agendarConsulta(paciente, dataSelecionada).then((mensagem) => {
+      DomHandler.exibirConsulta(mensagem);
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  carregarDados();
+  document
+    .getElementById('btnAgendar')
+    .addEventListener('click', agendarConsulta);
+});
 
 // const medico = new Medico(
 //   'Dr.Fernando Dias',
